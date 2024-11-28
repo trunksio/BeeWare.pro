@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <!-- Contract Icon -->
+  <g transform="translate(0,0)">
+    <path d="M50,25 L85,45 L85,85 L50,105 L15,85 L15,45 Z" fill="none" stroke="#FFA500" stroke-width="2"/>
+    <path d="M35,55 L65,55 M35,65 L65,65 M35,75 L55,75" stroke="#FFA500" stroke-width="2"/>
+  </g>
+  
+  <!-- API Icon -->
+  <g transform="translate(150,0)">
+    <path d="M50,25 L85,45 L85,85 L50,105 L15,85 L15,45 Z" fill="none" stroke="#FFA500" stroke-width="2"/>
+    <path d="M35,65 C35,45 65,85 65,65" stroke="#FFA500" stroke-width="2" fill="none"/>
+    <circle cx="35" cy="55" r="3" fill="#FFA500"/>
+    <circle cx="65" cy="55" r="3" fill="#FFA500"/>
+  </g>
+  
+  <!-- Security Icon -->
+  <g transform="translate(300,0)">
+    <path d="M50,25 L85,45 L85,85 L50,105 L15,85 L15,45 Z" fill="none" stroke="#FFA500" stroke-width="2"/>
+    <path d="M50,45 L60,55 L45,70 L40,65 L50,45" fill="#FFA500"/>
+  </g>
+  
+  <!-- Governance Icon -->
+  <g transform="translate(450,0)">
+    <path d="M50,25 L85,45 L85,85 L50,105 L15,85 L15,45 Z" fill="none" stroke="#FFA500" stroke-width="2"/>
+    <path d="M35,65 L50,45 L65,65 M50,45 L50,85" stroke="#FFA500" stroke-width="2"/>
+  </g>
+</svg>
