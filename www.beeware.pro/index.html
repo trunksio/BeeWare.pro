@@ -7,6 +7,41 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white py-4 px-6 z-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0">
+                <p class="text-sm">
+                    We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
+                    By clicking "Accept", you consent to our use of cookies. For more information, please read our 
+                    <a href="/privacy-policy" class="underline hover:text-yellow-400">Privacy Policy</a>.
+                </p>
+            </div>
+            <button onclick="acceptCookies()" class="bg-yellow-400 text-black px-6 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-500">
+                Accept
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            // Set cookie for 1 year
+            let date = new Date();
+            date.setFullYear(date.getFullYear() + 1);
+            document.cookie = "cookie_consent=accepted; expires=" + date.toUTCString() + "; path=/; SameSite=Strict";
+        }
+
+        // Check if user has already accepted cookies
+        function checkCookieConsent() {
+            if (document.cookie.split(';').some((item) => item.trim().startsWith('cookie_consent='))) {
+                document.getElementById('cookie-banner').style.display = 'none';
+            }
+        }
+
+        // Run on page load
+        window.onload = checkCookieConsent;
+    </script>
     <!-- Black Friday Banner -->
     <div class="bg-black text-white py-4">
         <div class="max-w-7xl mx-auto px-4 text-center">
