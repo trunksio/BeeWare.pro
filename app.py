@@ -24,6 +24,19 @@ async def add_numbers(numbers: Numbers):
     """
     return numbers.a + numbers.b
 
+@app.post("/multiply/", response_model=float)
+async def multiply_numbers(numbers: Numbers):
+    """
+    Multiply two numbers together
+    
+    Args:
+        numbers: Numbers object containing two numbers to multiply
+        
+    Returns:
+        The product of the two numbers
+    """
+    return numbers.a * numbers.b
+
 @app.get("/")
 async def root():
     """
