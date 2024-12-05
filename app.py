@@ -15,7 +15,7 @@ class Numbers(BaseModel):
 
 class ContactForm(BaseModel):
     name: str
-    email: EmailStr
+    email: str
     company: str
     message: str
 
