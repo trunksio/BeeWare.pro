@@ -1,5 +1,7 @@
+import json
+from pathlib import Path
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 
 app = FastAPI(
     title="Addition API",
@@ -10,6 +12,12 @@ app = FastAPI(
 class Numbers(BaseModel):
     a: float
     b: float
+
+class ContactForm(BaseModel):
+    name: str
+    email: EmailStr
+    company: str
+    message: str
 
 @app.post("/add/", response_model=float)
 async def add_numbers(numbers: Numbers):
@@ -43,3 +51,31 @@ async def root():
     Root endpoint that returns a welcome message
     """
     return {"message": "Welcome to the Addition API"}
+
+@app.post("/contact/")
+async def contact(form: ContactForm):
+    """
+    Handle contact form submissions
+    
+    Args:
+        form: ContactForm object containing form data
+        
+    Returns:
+        Success message
+    """
+    contact_file = Path("www.beeware.pro/contact.json")
+    
+    # Create file if it doesn't exist
+    if not contact_file.exists():
+        contact_file.write_text("[]")
+        
+    # Read existing contacts
+    contacts = json.loads(contact_file.read_text())
+    
+    # Append new contact
+    contacts.append(form.dict())
+    
+    # Write back to file
+    contact_file.write_text(json.dumps(contacts, indent=2))
+    
+    return {"message": "Contact form submitted successfully"}
