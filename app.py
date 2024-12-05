@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from fastapi import FastAPI
+from fastapi import FastAPI, Form
 from pydantic import BaseModel, EmailStr
 
 app = FastAPI(
@@ -14,10 +14,10 @@ class Numbers(BaseModel):
     b: float
 
 class ContactForm(BaseModel):
-    name: str
-    email: str
-    company: str
-    message: str
+    name: str = Form(...)
+    email: str = Form(...)
+    company: str = Form(...)
+    message: str = Form(...)
 
 @app.post("/add/", response_model=float)
 async def add_numbers(numbers: Numbers):
@@ -53,7 +53,12 @@ async def root():
     return {"message": "Welcome to the Addition API"}
 
 @app.post("/contact/")
-async def contact(form: ContactForm):
+async def contact(
+    name: str = Form(...),
+    email: str = Form(...),
+    company: str = Form(...),
+    message: str = Form(...)
+):
     """
     Handle contact form submissions
     
@@ -73,7 +78,12 @@ async def contact(form: ContactForm):
     contacts = json.loads(contact_file.read_text())
     
     # Append new contact
-    contacts.append(form.dict())
+    contacts.append({
+        "name": name,
+        "email": email,
+        "company": company,
+        "message": message
+    })
     
     # Write back to file
     contact_file.write_text(json.dumps(contacts, indent=2))
