@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers at BeeWare.pro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex space-x-8">
+                    <a href="/" class="flex items-center">
+                        <span class="text-xl font-bold text-yellow-400">BeeWare.pro</span>
+                    </a>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="/case-studies.html" class="text-gray-700 hover:text-yellow-400">Case Studies</a>
+                        <a href="/contact.html" class="text-gray-700 hover:text-yellow-400">Contact</a>
+                        <a href="/careers.html" class="text-gray-700 hover:text-yellow-400">Careers</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-bold text-black mb-6">Join Our Hive</h1>
+            <p class="text-xl text-gray-800">Help us build the future of intelligent data integration</p>
+        </div>
+    </section>
+
+    <!-- Current Openings -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12">Current Opportunities</h2>
+            
+            <div class="grid gap-8">
+                <div class="border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold mb-2">Senior AI Engineer</h3>
+                    <p class="text-gray-600 mb-4">Help develop our next generation of intelligent agents</p>
+                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Full-time</span>
+                </div>
+
+                <div class="border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold mb-2">Data Security Specialist</h3>
+                    <p class="text-gray-600 mb-4">Design and implement enterprise-grade security measures</p>
+                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Full-time</span>
+                </div>
+
+                <div class="border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold mb-2">Product Manager</h3>
+                    <p class="text-gray-600 mb-4">Shape the future of our Apiary platform</p>
+                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Full-time</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Register Interest -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="bg-white rounded-lg shadow-xl p-8">
+                <h2 class="text-3xl font-bold mb-6">Don't see the right role?</h2>
+                <p class="text-gray-600 mb-8">Register your interest and we'll keep you updated on new opportunities.</p>
+                
+                <form class="space-y-6">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500">
+                    </div>
+                    <div>
+                        <label for="expertise" class="block text-sm font-medium text-gray-700">Area of Expertise</label>
+                        <select id="expertise" name="expertise" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500">
+                            <option>AI/ML Engineering</option>
+                            <option>Data Security</option>
+                            <option>Product Management</option>
+                            <option>Software Development</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="bg-yellow-400 text-black px-8 py-3 rounded-lg text-lg font-semibold hover:bg-yellow-500">
+                        Register Interest
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
